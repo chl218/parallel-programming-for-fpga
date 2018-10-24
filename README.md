@@ -12,8 +12,8 @@
 
 ## Resources
 
-[Parallel Programming for FPGAs book][1]
-[Parallel Programming for FPGAs source][2]
+* [Parallel Programming for FPGAs book][1]
+* [Parallel Programming for FPGAs source][2]
 
 
 [1]: http://kastner.ucsd.edu/hlsbook/
