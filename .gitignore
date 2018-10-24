@@ -40,7 +40,8 @@
 
 # Vivado HLS Solution
 .autopilot/
-.tcls
+.tcls/
+csim/
 
 directives.tcl
 script.tcl

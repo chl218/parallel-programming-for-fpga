@@ -1,5 +1,5 @@
 /*******************************************************************************
- *	Filename: fir.cpp
+ *	Filename: fir11.cpp
  *
  *	INPUT:
  *		x: signal (chirp)
@@ -9,15 +9,9 @@
  *
  ******************************************************************************/
 
-#include "ap_int.h"
+#include "fir11.h"
 
-#define N 11
-
-typedef int coef_t;
-typedef int data_t;
-typedef int acc_t;
-
-void fir(data_t *y, data_t x) {
+void fir11(data_t *y, data_t x) {
 	coef_t c[N] = {53, 0, -91, 0, 313, 500, 313, 0, -91, 0, 53};
 
 	static data_t shift_reg[N];
@@ -34,6 +28,5 @@ void fir(data_t *y, data_t x) {
 			acc += shift_reg[i] * c[i];
 		}
 	} // end Shift_Accum_Loop
-
 	*y = acc;
 }
