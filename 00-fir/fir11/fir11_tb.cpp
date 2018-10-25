@@ -20,8 +20,8 @@ int main(int argc, char* argv[]) {
 		fir11(&output, signal);
 
 		// Save the results.
-		fprintf(fout, "%d\n", output);
-		printf("%3i %4d %7d\n", i, signal, output);
+		fprintf(fout, "%d\n", (int)output);
+		printf("%3i %4d %7d\n", i, (int)signal, (int)output);
 	}
 
 	fclose(fin);
