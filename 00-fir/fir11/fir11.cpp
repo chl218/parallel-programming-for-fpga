@@ -18,15 +18,13 @@ void fir11(data_t *y, data_t x) {
 
 	acc_t acc = 0;
 
-	Shift_Accum_Loop: for(int i = N - 1; i >= 0; i--) {
-		if(i == 0) {
-			acc += x * c[0];
-			shift_reg[0] = x;
-		}
-		else {
-			shift_reg[i] = shift_reg[i-1];
-			acc += shift_reg[i] * c[i];
-		}
+	Shift_Accum_Loop: for(int i = N - 1; i > 0; i--) {
+		shift_reg[i] = shift_reg[i-1];
+		acc += shift_reg[i] * c[i];
 	} // end Shift_Accum_Loop
+
+	acc += x*c[0];
+	shift_reg[0] = x;
+
 	*y = acc;
 }
